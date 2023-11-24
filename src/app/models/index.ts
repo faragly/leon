@@ -12,8 +12,8 @@ export type Author = ID & CreateAuthor;
 export type CreateBook = {
     authorId: number;
     name: string;
-    publisher: string;
+    publisher?: string;
     year: number;
 }
 
-export type Boot = ID & CreateAuthor;
+export type Book = ID & CreateBook;

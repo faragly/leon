@@ -1,0 +1,30 @@
+<form [formGroup]="form" class="form">
+    <mat-form-field class="full-width">
+        <mat-label>Автор</mat-label>
+        <mat-select formControlName="authorId">
+          <mat-option *ngFor="let author of authors()" [value]="author.id">
+            {{ author.lastName }} {{ author.firstName }} {{ author.fatherName }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Название</mat-label>
+        <input type="text" matInput formControlName="name">
+        <mat-error *ngIf="form.get('name')?.hasError('required')">Поле <strong>обязательно</strong> для заполнения</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Издатель</mat-label>
+        <input type="text" matInput formControlName="publisher">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Год</mat-label>
+        <input matInput [matDatepicker]="dp" formControlName="year">
+        <mat-hint>YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp startView="multi-year" (yearSelected)="setYear($event, dp)" panelClass="year-picker"></mat-datepicker>
+      </mat-form-field>
+    <button mat-raised-button color="primary" (click)="handleAdd()" [disabled]="form.invalid">
+        <mat-icon fontIcon="add"></mat-icon>
+        Добавить
+    </button>
+</form>
