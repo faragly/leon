@@ -17,3 +17,5 @@ export type CreateBook = {
 }
 
 export type Book = ID & CreateBook;
+
+export type BookExt = Book & { author: string };

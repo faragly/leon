@@ -1,0 +1,32 @@
+<h1>Книги</h1>
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let book">{{ book.id }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="author">
+      <th mat-header-cell mat-sort-header sortActionDescription="Сортировать по автору" *matHeaderCellDef>Автор</th>
+      <td mat-cell *matCellDef="let book">{{ book.author }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell mat-sort-header sortActionDescription="Сортировать по названию" *matHeaderCellDef>Название</th>
+      <td mat-cell *matCellDef="let book">{{ book.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="publisher">
+      <th mat-header-cell mat-sort-header sortActionDescription="Сортировать по издателю" *matHeaderCellDef>Издатель</th>
+      <td mat-cell *matCellDef="let book">{{ book.publisher }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell mat-sort-header sortActionDescription="Сортировать по году" *matHeaderCellDef>Год</th>
+      <td mat-cell *matCellDef="let book">{{ book.year }}</td>
+    </ng-container>
+
+    <tr *matNoDataRow><td colspan="5">Нет данных</td></tr>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
