@@ -2,7 +2,7 @@ export type CreateAuthor = {
     firstName: string;
     lastName: string;
     fatherName?: string;
-    dob: Date;
+    dob: string;
 }
 
 type ID = { id: number };
