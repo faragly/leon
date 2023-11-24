@@ -1,0 +1,27 @@
+<form [formGroup]="form" class="form">
+    <mat-form-field class="full-width">
+        <mat-label>Фамилия</mat-label>
+        <input type="text" matInput formControlName="lastName">
+        <mat-error *ngIf="form.get('lastName')?.hasError('required')">Поле <strong>обязательно</strong> для заполнения</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Имя</mat-label>
+        <input type="text" matInput formControlName="firstName">
+        <mat-error *ngIf="form.get('firstName')?.hasError('required')">Поле <strong>обязательно</strong> для заполнения</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Отчество</mat-label>
+        <input type="text" matInput formControlName="fatherName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Дата рождения</mat-label>
+        <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="dob">
+        <mat-hint>DD.MM.YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="handleAdd()" [disabled]="form.invalid">
+        <mat-icon fontIcon="add"></mat-icon>
+        Добавить
+    </button>
+</form>

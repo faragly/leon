@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AddAuthorComponent } from '../add-author/add-author.component';
 
 @Component({
   selector: 'app-authors',
   standalone: true,
-  imports: [CommonModule],
+  imports: [AddAuthorComponent],
   templateUrl: './authors.component.html',
   styleUrls: ['./authors.component.scss']
 })
 export class AuthorsComponent {
-
+  
 }

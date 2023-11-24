@@ -1,0 +1,10 @@
+.form {
+    display: grid;
+    justify-items: start;
+    row-gap: 1rem;
+}
+
+.full-width {
+    width: 100%;
+    max-width: 400px;
+}
