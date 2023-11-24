@@ -1,0 +1,10 @@
+<mat-toolbar>
+    <button mat-button routerLinkActive #authors="routerLinkActive" [color]="authors.isActive ? 'primary' : null" routerLink="/authors">
+        <mat-icon fontIcon="person_add"></mat-icon>
+        Добавить автора
+    </button>
+    <button mat-button routerLinkActive #books="routerLinkActive" [color]="books.isActive ? 'primary' : null" routerLink="/books">
+        <mat-icon fontIcon="add"></mat-icon>
+        Добавить книгу
+    </button>
+</mat-toolbar>
