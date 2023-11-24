@@ -6,6 +6,7 @@
             {{ author.lastName }} {{ author.firstName }} {{ author.fatherName }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="form.get('authorId')?.hasError('required')">Выберите автора</mat-error>
     </mat-form-field>
     <mat-form-field class="full-width">
         <mat-label>Название</mat-label>
